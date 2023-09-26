@@ -6,7 +6,7 @@ import boto3
 
 # build a connection to s3 as a function
 def s3_connection():
-    s3 = boto3.resource('s3')
+    s3 = boto3.resource("s3")
     return s3
 
 
@@ -16,10 +16,12 @@ def s3_list_buckets(s3):
     for bucket in s3.buckets.all():
         print(bucket.name)
 
+
 # invoke main function
 def main():
     s3 = s3_connection()
     s3_list_buckets(s3)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
